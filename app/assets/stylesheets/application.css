@@ -6,19 +6,19 @@ body {
 }
 
 h1 {
-	font-size: 80px;
+	font-size: 63px;
 	font-family: sans-serif, serif;
 	font-weight: bold;
 }
 
 h2 {
-	font-size: 60px;
+	font-size: 50px;
 	font-family: sans-serif, Serif;
 	font-weight: bold;
 }
 
 h3 {
-	font-size: 40px;
+	font-size: 30px;
 	font-family: sans-serif, Serif;
 }
 
@@ -29,17 +29,17 @@ div.center {
 }
 
 div.position {
-	font-size: 25px;
+	font-size: 20px;
 	font-family: sans-serif, Serif;
 	font-style: oblique;
     color: orange;
 }
 
 div.name {
-	font-size: 40px;
+	font-size: 30px;
 	font-family: sans-serif, Serif;
 }
 div.phone {
-    font-size: 25px;
+    font-size: 20px;
     font-family: sans-serif, Serif;
 }
