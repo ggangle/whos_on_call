@@ -10,15 +10,16 @@
 
     <div class="container">
       <div class="row", align="center">
-        <% @collected.each do |id, on_call| %>
+        <% @user_records.each do |id, user_record| %>
           <div class="col-xs-4">
-            <h2><%= on_call[:title] %></h2>
+            <h2><%= user_record[:title] %></h2>
               <div class="position">Primary:</div>
-              <div class="name"><%= on_call[:primary]["user"]["name"] %></div>
+              <div class="name"><%= user_record[:primary]["user"]["name"] %></div>
+              <div class="phone"><%= number_to_phone(user_record[:primary_phone], area_code: true) %></div>
               <div class="position">Secondary:</div>
-              <div class="name"><%= on_call[:secondary].try(:[], "user").try(:[], "name") || "N/A" %></div>
+              <div class="name"><%= user_record[:secondary].try(:[], "user").try(:[], "name") || "N/A" %></div>
               <div class="position">Next Rotation:</div>
-              <div class="name"><%= Date.parse(on_call[:primary]["end"]).strftime("%m/%d/%y") %></div>
+              <div class="name"><%= Date.parse(user_record[:primary]["end"]).strftime("%m/%d/%y") %></div>
               <br>
               <br>
           </div>
