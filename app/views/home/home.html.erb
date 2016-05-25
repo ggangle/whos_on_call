@@ -17,6 +17,8 @@
               <div class="name"><%= on_call[:primary]["user"]["name"] %></div>
               <div class="position">Secondary:</div>
               <div class="name"><%= on_call[:secondary].try(:[], "user").try(:[], "name") || "N/A" %></div>
+              <div class="position">Next Rotation:</div>
+              <div class="name"><%= Date.parse(on_call[:primary]["end"]).strftime("%m/%d/%y") %></div>
               <br>
               <br>
           </div>

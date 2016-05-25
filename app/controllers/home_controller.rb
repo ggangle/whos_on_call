@@ -23,7 +23,6 @@ class HomeController < ApplicationController
 		response["escalation_policies"].each do |policy|
 			id = policy["id"]
 			on_call_users = policy["on_call"]
-		
 
 			if ["#{ENV["CA_POLICY"]}", "#{ENV["CS_POLICY"]}"].include? id
 				@collected[id] = {
@@ -38,7 +37,22 @@ class HomeController < ApplicationController
 					secondary: on_call_users.second,
 				}
 			end
+
 		end
+
+		# user_response = HTTParty.get("https://#{ENV['BASE_DOMAIN']}.pagerduty.com/api/v1/users/#{user_id}/contact_methods", {
+		# 		headers: {
+		# 				"Authorization" => "Token token=#{ENV["PAGERDUTY_TOKEN"]}",
+		# 		},
+		# 		format: :json,
+		# })
+    #
+		# user_response.each do |contact|
+    #
+		# 				@phone = contact[1]["phone_number"]
+    #
+		# end
+
 	end
 
 end
